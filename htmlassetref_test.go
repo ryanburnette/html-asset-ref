@@ -3,6 +3,7 @@ package htmlassetref_test
 import (
 	"fmt"
 	"io/ioutil"
+	"path/filepath"
 	"strings"
 	"testing"
 
@@ -51,14 +52,15 @@ func TestUpdateAssetRefs(t *testing.T) {
 
 	// Define the callback function to add _x before the extension
 	callback := func(ref string) string {
-		// Split the reference by the dot (.) to separate the filename and extension
-		parts := strings.Split(ref, ".")
-		if len(parts) > 1 {
-			// Add _x before the extension
-			parts[0] += "_x"
-		}
-		// Reconstruct the reference
-		return strings.Join(parts, ".")
+		// Extract the filename and extension using the filepath package
+		filename := filepath.Base(ref)
+		extension := filepath.Ext(ref)
+
+		// Add _x before the extension
+		newFilename := strings.TrimSuffix(filename, extension) + "_x" + extension
+
+		// Reconstruct the reference with the updated filename
+		return filepath.Join(filepath.Dir(ref), newFilename)
 	}
 
 	// Update the asset references in the original HTML
