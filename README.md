@@ -12,7 +12,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/ryanburnette/htmlassetref"
+	htmlassetref "github.com/ryanburnette/html-asset-ref"
 )
 
 func main() {
