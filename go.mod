@@ -1,3 +1,3 @@
-module github.com/ryanburnette/html-asset-ref
+module github.com/ryanburnette/htmlassetref
 
 go 1.20

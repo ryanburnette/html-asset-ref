@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	htmlassetref "github.com/ryanburnette/html-asset-ref"
+	"github.com/ryanburnette/htmlassetref"
 )
 
 func TestRefString(t *testing.T) {

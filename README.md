@@ -1,9 +1,6 @@
-# html-asset-ref
+# htmlassetref
 
-`htmlassetref` is a Go package designed to update URL references within HTML
-content. It provides a simple and convenient way to search for HTML tags
-containing attributes such as src, href, or srcset that reference URLs and
-modify them based on a callback function.
+`htmlassetref` is a Go package that enables the modification of URL references within HTML content. It offers a straightforward and convenient approach to identify HTML tags with attributes like src, href, or srcset that reference URLs, allowing for easy customization based on a callback function. With `htmlassetref`, developers can efficiently update and manipulate URL references in HTML, facilitating tasks such as rewriting asset URLs, handling path adjustments, or implementing custom transformations.
 
 ## Usage
 
@@ -12,7 +9,7 @@ package main
 
 import (
 	"fmt"
-	htmlassetref "github.com/ryanburnette/html-asset-ref"
+	"github.com/ryanburnette/htmlassetref"
 )
 
 func main() {
@@ -35,11 +32,11 @@ func main() {
 
 ## Test
 
-The `_content.html` markup in this project should contain all possible examples
-of HTML tags that reference a downloadable asset.
-
-The test ensures that all applicable tags are being found and their correct
-references returned and then modified by the callback.
+The reliability of this package is maintained through the test. The
+`_content.html` markup in this project should contain all possible examples of
+HTML tags that reference a downloadable asset. The tests ensure that all
+applicable tags are being found and their correct references returned and then
+modified by the callback.
 
 ```shell
 go test
